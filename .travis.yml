@@ -22,3 +22,11 @@ script:
   - python manage.py test
 
 if: branch=master
+
+deploy:
+  provider: heroku
+  app: ej2-egc-antsuabon
+  strategy: git
+  api_key: $HEROKU_AUTH_TOKEN
+  on:
+    branch: master

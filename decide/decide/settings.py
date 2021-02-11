@@ -68,7 +68,7 @@ MODULES = [
     'voting',
 ]
 
-BASEURL = 'http://localhost:8000'
+BASEURL = 'https://ej2-egc-antsuabon.herokuapp.com'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -157,6 +157,9 @@ try:
     from local_settings import *
 except ImportError:
     print("local_settings.py not found")
+
+    import django_heroku
+    django_heroku.settings(locals())
 
 
 INSTALLED_APPS = INSTALLED_APPS + MODULES
